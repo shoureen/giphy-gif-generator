@@ -1,38 +1,147 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Assignment #9: Giphy API</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link href = "./css/style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="container my-5">
-      <h1 class="mb-2 text-center">GIFVERSE</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<p class="text-center subtitle mb-4">
-  Find your mood. Express it in GIFs.
-</p>
-      <!-- Stretch: Add search functionality by commenting out the <div> element below -->
+  <title>GIFVERSE | Find Your Mood</title>
 
-      <div class="row justify-content-center mb-3">
-        <div class="col-md-6">
-          <input type="text" id="search-input" class="form-control" placeholder="Search for a GIF">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container py-4">
+
+    <!-- Navigation -->
+    <nav class="navbar mb-5">
+      <a class="navbar-brand logo" href="#">GIFVERSE<span>.</span></a>
+      <span class="nav-caption">YOUR DAILY DOSE OF CHAOS ✦</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero text-center">
+      <p class="eyebrow">WELCOME TO YOUR INTERNET HAPPY PLACE</p>
+
+      <h1>Your mood deserves a GIF.</h1>
+
+      <p class="subtitle">
+        Because sometimes words just aren't enough. 💅
+      </p>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+
+      <form id="search-form" class="search-box">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search your current obsession..."
+          autocomplete="off"
+          aria-label="Search for GIFs"
+        >
+
+        <button type="submit" id="fetch-gif-btn">
+          Find GIFs ✨
+        </button>
+      </form>
+
+      <button id="surprise-btn" class="surprise-btn">
+        🎲 Surprise Me
+      </button>
+
+    </section>
+
+    <!-- Mood Buttons -->
+    <section class="mood-section">
+
+      <h2>What's the vibe today?</h2>
+
+      <div class="mood-buttons">
+        <button class="mood-btn" data-search="dramatic reaction">
+          😭 Send help
+        </button>
+
+        <button class="mood-btn" data-search="sassy reaction">
+          💅 Delulu
+        </button>
+
+        <button class="mood-btn" data-search="main character energy">
+          ✨ Main character
+        </button>
+
+        <button class="mood-btn" data-search="funny shocked reaction">
+          💀 I'm done
+        </button>
+
+        <button class="mood-btn" data-search="cute happy animals">
+          🥹 Feeling cute
+        </button>
+
+        <button class="mood-btn" data-search="celebration dancing">
+          🪩 Party mode
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Status Message -->
+    <p id="status-message" class="status-message" aria-live="polite">
+      Loading the good stuff...
+    </p>
+
+    <!-- GIF Results -->
+    <section class="gif-section">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE INTERNET'S BEST REACTIONS</p>
+          <h2 id="results-title">🔥 Trending GIFs</h2>
         </div>
       </div>
-      
-<div class="d-flex justify-content-center mb-4">
-  <button id="fetch-gif-btn" class="btn btn-primary">
-    Fetch a GIF
-  </button>
-</div>
 
-      <div id="gif-container" class="row">
-        <!-- Output your gifs here -->
+      <div id="gif-container" class="gif-grid"></div>
+
+    </section>
+
+    <!-- Favorites -->
+    <section class="favorites-section">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+          <h2>💜 Your Favorites</h2>
+        </div>
       </div>
-    </div>
 
-    <script src="./js/script.js"></script>
-  </body>
+      <p class="favorites-description">
+        Keep the GIFs you love. Your collection stays in this browser.
+      </p>
+
+      <div id="favorites-container" class="gif-grid"></div>
+
+      <p id="empty-favorites" class="empty-message">
+        No favorites yet. Give a GIF some love! 💜
+      </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with caffeine, JavaScript & questionable humor ☕</p>
+      <p>GIFVERSE © 2026</p>
+    </footer>
+
+  </div>
+
+  <script src="./js/script.js"></script>
+
+</body>
 </html>

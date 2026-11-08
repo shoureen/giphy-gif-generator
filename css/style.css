@@ -1,5 +1,12 @@
 
-/* ===== General Page Styling ===== */
+/* =========================
+   GLOBAL STYLING
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #100d16;
   color: #f5f0ff;
@@ -7,109 +14,345 @@ body {
   min-height: 100vh;
 }
 
-/* ===== Main Container ===== */
 .container {
-  max-width: 1100px;
+  max-width: 1150px;
 }
 
-/* ===== Heading ===== */
-h1 {
-  color: #ffffff;
-  font-size: 3rem;
-  font-weight: 800;
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  border-bottom: 1px solid #30243c;
+  padding-bottom: 18px;
+}
+
+.logo {
+  color: white;
+  font-size: 26px;
+  font-weight: 900;
   letter-spacing: -1px;
-  margin-bottom: 12px !important;
-  text-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
 }
 
-h1::after {
-  content: ".";
+.logo:hover {
+  color: white;
+}
+
+.logo span {
   color: #a855f7;
 }
 
-/* ===== Search Input ===== */
-#search-input {
+.nav-caption {
+  color: #a99bb9;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 35px 10px 30px;
+}
+
+.eyebrow {
+  color: #b76aff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 6vw, 58px);
+  font-weight: 850;
+  letter-spacing: -2px;
+  color: white;
+}
+
+.subtitle {
+  color: #b5a6c5;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+  max-width: 850px;
+  margin: 25px auto 45px;
+  text-align: center;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  padding: 8px;
   background: #1c1726;
   border: 1px solid #49315f;
-  color: white;
-  border-radius: 14px;
-  padding: 15px 18px;
-  font-size: 15px;
+  border-radius: 16px;
   transition: 0.3s ease;
 }
 
-#search-input::placeholder {
-  color: #a49aaf;
-}
-
-#search-input:focus {
-  background: #211a2e;
+.search-box:focus-within {
   border-color: #a855f7;
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
-  color: white;
-  outline: none;
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.18);
 }
 
-/* ===== Fetch Button ===== */
+#search-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+#search-input::placeholder {
+  color: #a99bb9;
+}
+
 #fetch-gif-btn {
-  background: linear-gradient(135deg, #9333ea, #6d28d9);
+  background: linear-gradient(135deg, #a855f7, #7025ce);
   color: white;
   border: none;
-  border-radius: 12px;
-  padding: 13px 32px;
-  font-size: 15px;
+  border-radius: 11px;
+  padding: 12px 23px;
   font-weight: 700;
-  letter-spacing: 0.3px;
-  box-shadow: 0 5px 20px rgba(147, 51, 234, 0.25);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 #fetch-gif-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(168, 85, 247, 0.4);
+}
+
+.surprise-btn {
+  margin-top: 16px;
+  background: #251b31;
+  color: #dfc5ff;
+  border: 1px solid #624080;
+  border-radius: 30px;
+  padding: 11px 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.surprise-btn:hover {
+  background: #43245e;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MOOD BUTTONS
+========================= */
+
+.mood-section {
+  margin: 45px 0;
+}
+
+.mood-section h2,
+.gif-section h2,
+.favorites-section h2 {
+  font-size: 21px;
+  font-weight: 750;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mood-btn {
+  background: #21182d;
+  border: 1px solid #483157;
+  color: #e5d6f5;
+  border-radius: 30px;
+  padding: 10px 17px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.mood-btn:hover {
+  background: #482464;
+  border-color: #a855f7;
+  color: white;
   transform: translateY(-3px);
-  background: linear-gradient(135deg, #a855f7, #7e22ce);
-  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.4);
 }
 
-/* ===== GIF Grid ===== */
-#gif-container {
-  margin-top: 35px;
-  row-gap: 18px;
+/* =========================
+   STATUS MESSAGE
+========================= */
+
+.status-message {
+  color: #bda4d6;
+  font-size: 13px;
+  margin: 25px 0;
+  min-height: 20px;
 }
 
-/* ===== GIF Cards ===== */
-#gif-container img {
-  height: 220px;
-  object-fit: cover;
+/* =========================
+   GIF SECTIONS
+========================= */
+
+.gif-section,
+.favorites-section {
+  margin: 55px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* =========================
+   GIF CARDS
+========================= */
+
+.gif-card {
+  position: relative;
+  overflow: hidden;
+  background: #1d1726;
+  border: 1px solid #342640;
   border-radius: 15px;
-  padding: 5px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* ===== GIF Hover Effect ===== */
-#gif-container img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 22px rgba(168, 85, 247, 0.35);
+.gif-card:hover {
+  transform: translateY(-5px);
+  border-color: #a855f7;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.16);
 }
 
-/* ===== Mobile Responsive ===== */
+.gif-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.gif-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+}
+
+.gif-actions button {
+  background: #30223e;
+  color: white;
+  border: 1px solid #55366b;
+  border-radius: 9px;
+  padding: 8px 12px;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.gif-actions button:hover {
+  background: #6b2ca1;
+}
+
+.gif-actions .favorite-btn.is-favorite {
+  color: #ff78ba;
+  border-color: #a83c79;
+}
+
+/* =========================
+   FAVORITES
+========================= */
+
+.favorites-section {
+  padding-top: 35px;
+  border-top: 1px solid #30243c;
+}
+
+.favorites-description {
+  color: #a99bb9;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.empty-message {
+  color: #8e7a9f;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  border-top: 1px solid #30243c;
+  margin-top: 65px;
+  padding: 25px 0;
+  text-align: center;
+  color: #8e7a9f;
+  font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.2rem;
+  .gif-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
-  #gif-container img {
-    height: 150px;
+  .gif-card img {
+    height: 180px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  #gif-container img {
-    width: 50%;
+  .search-box {
+    flex-direction: column;
   }
-}
-.subtitle {
-  color: #a99bb9;
-  font-size: 15px;
-  letter-spacing: 1px;
+
+  #fetch-gif-btn {
+    width: 100%;
+  }
+
+  .gif-card img {
+    height: 145px;
+  }
+
+  .gif-actions {
+    padding: 7px;
+  }
+
+  .gif-actions button {
+    padding: 7px;
+    font-size: 11px;
+  }
+
+  .nav-caption {
+    font-size: 8px;
+  }
 }
