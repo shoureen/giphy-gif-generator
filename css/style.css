@@ -1,1 +1,115 @@
-/* Add any custom CSS stylings you want here */
+
+/* ===== General Page Styling ===== */
+body {
+  background: #100d16;
+  color: #f5f0ff;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 1100px;
+}
+
+/* ===== Heading ===== */
+h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px !important;
+  text-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+}
+
+h1::after {
+  content: ".";
+  color: #a855f7;
+}
+
+/* ===== Search Input ===== */
+#search-input {
+  background: #1c1726;
+  border: 1px solid #49315f;
+  color: white;
+  border-radius: 14px;
+  padding: 15px 18px;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+#search-input::placeholder {
+  color: #a49aaf;
+}
+
+#search-input:focus {
+  background: #211a2e;
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+  color: white;
+  outline: none;
+}
+
+/* ===== Fetch Button ===== */
+#fetch-gif-btn {
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 5px 20px rgba(147, 51, 234, 0.25);
+  transition: all 0.3s ease;
+}
+
+#fetch-gif-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.4);
+}
+
+/* ===== GIF Grid ===== */
+#gif-container {
+  margin-top: 35px;
+  row-gap: 18px;
+}
+
+/* ===== GIF Cards ===== */
+#gif-container img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  padding: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* ===== GIF Hover Effect ===== */
+#gif-container img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.35);
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  #gif-container img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  #gif-container img {
+    width: 50%;
+  }
+}
+.subtitle {
+  color: #a99bb9;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
